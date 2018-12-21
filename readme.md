@@ -11,10 +11,9 @@ Dependencies for each service are listed under the service name, the recommended
 Double click to install into your OSX services folder: `~/Library/Services/`. The automator workflow file in your cloned repo will be removed automatically by OSX. To restore in your repository run `git reset --hard`.
 
 
-### :loudspeaker: Audio Services :speaker:
+### Audio Services
 
-#### Make 320 kbps MP3
-Using [Lame](http://lame.sourceforge.net/), Converts each selected audio file into an mp3 with 320 kbps bitrate (install with `brew install lame`).
+* **Make 320 kbps MP3** converts each selected audio file into an mp3 with 320 kbps bitrate using [Lame](http://lame.sourceforge.net/) (install with `brew install lame`).
 
       export PATH=/usr/local/bin:$PATH
       for f in "$@"
@@ -22,8 +21,7 @@ Using [Lame](http://lame.sourceforge.net/), Converts each selected audio file in
          lame -b 320 "$f"
       done
 
-#### Convert to WavPack
-Converts each selected audio file into a high quality, lossless, [WavPack](http://www.wavpack.com/) file (install with `brew install wavpack`). The original file will be removed.
+* **Convert to WavPack** converts each selected audio file into a high quality, lossless, [WavPack](http://www.wavpack.com/) file (install with `brew install wavpack`). The original file will be removed.
 
       export PATH=/usr/local/bin:$PATH
       for f in "$@"
@@ -31,29 +29,24 @@ Converts each selected audio file into a high quality, lossless, [WavPack](http:
           wavpack -dh "$f"
       done
    
-Also included is a **Convert from WavPack** service which converts a `.wv` file back to `.wav` (deleting original file).
+  Also included is a **Convert from WavPack** service which converts a `.wv` file back to `.wav` (deleting original file).
 
-#### Convert to Flac
-  Converts each selected audio file into a lossless [Flac](https://xiph.org/flac/) file (install with `brew install flac`). The original file will be removed.
+* **Convert to Flac** converts each selected audio file into a lossless [Flac](https://xiph.org/flac/) file (install with `brew install flac`). The original file will be removed.
 
       for f in "$@"
       do
          flac --delete-input-file "$f"
       done
 
-Also included is a **Convert from WavPack** service which converts a `.wv` file back to `.wav` (deleting original file).
+  Also included is a **Convert from WavPack** service which converts a `.wv` file back to `.wav` (deleting original file).
 
----
 
-### :flashlight: Utility Services :hammer:
+### Utility Services
 
-#### Create Alias on Desktop
-Creates an alias to the folder or file on the desktop.
+* **Create Alias on Desktop** creates an alias to the folder or file on the desktop.
 
-#### Open with Sublime
-Opens file or folder in [Sublime Text](https://www.sublimetext.com/) (install with `brew install sublime-text`).
+* **Open with Sublime** opens selected file or folder in [Sublime Text](https://www.sublimetext.com/) (install with `brew install sublime-text`).
 
----
 
 ## To Do
 
